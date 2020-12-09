@@ -16,17 +16,17 @@ String section = request.getParameter("section") != null ? request.getParameter(
 	
 	<%
 	switch(section){
-	case "insert_sale":
-		%><%@include file="page/insert_sale.jsp" %><%
+	case "insert_audition":
+		%><%@include file="page/insert_audition.jsp" %><%
 		break;
-	case "select_sales_inquiry":
-		%><%@include file="page/select_sales_inquiry.jsp" %><%
+	case "select_list":
+		%><%@include file="page/select_list.jsp" %><%
 		break;
-	case "select_sales_status":
-		%><%@include file="page/select_sales_status.jsp" %><%
+	case "select_mento_score":
+		%><%@include file="page/select_mento_score.jsp" %><%
 		break;
-	case "select_sales_status_category":
-		%><%@include file="page/select_sales_status_category.jsp" %><%
+	case "select_score":
+		%><%@include file="page/select_score.jsp" %><%
 		break;
 	default:
 		%><%@include file="static/index.jsp" %><%
