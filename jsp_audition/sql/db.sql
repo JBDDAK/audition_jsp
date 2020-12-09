@@ -211,7 +211,7 @@ WHERE point.artist_id = ARTIST.ARTIST_id
 AND mento.mento_id = point.mento_id
 order by point.artist_id, artist_name, point.point desc
 
-SELECT artist.artist_id, artist.artist_name, SUM(POINT.POINT) AS sumpoint, ROUND(avg(point.point),2) FROM tbl_artist_201905 artist, tbl_point_201905 POINT, tbl_mento_201905 mento
+SELECT artist.artist_id, artist.artist_name, SUM(POINT.POINT) AS sumpoint, avg(point.point) FROM tbl_artist_201905 artist, tbl_point_201905 POINT, tbl_mento_201905 mento
 WHERE artist.artist_id = POINT.artist_id
 AND mento.mento_id = POINT.mento_id
 GROUP BY artist.artist_id, artist.artist_name

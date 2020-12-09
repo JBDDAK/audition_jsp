@@ -24,7 +24,7 @@
 			System.out.println("Database Connect Fail!");
 		}
 		Statement stmt = conn.createStatement();
-		String query = "SELECT artist.artist_id, artist.artist_name, SUM(POINT.POINT) AS sumpoint, ROUND(avg(point.point),2) FROM tbl_artist_201905 artist, tbl_point_201905 POINT, tbl_mento_201905 mento "+
+		String query = "SELECT artist.artist_id, artist.artist_name, SUM(POINT.POINT) AS sumpoint, avg(point.point) FROM tbl_artist_201905 artist, tbl_point_201905 POINT, tbl_mento_201905 mento "+
 				"WHERE artist.artist_id = POINT.artist_id "+
 				"AND mento.mento_id = POINT.mento_id "+
 				"GROUP BY artist.artist_id, artist.artist_name "+
@@ -35,7 +35,7 @@
 				out.print("<td>"+ rs.getString(1) + "</td>");
 				out.print("<td>"+ rs.getString(2) + "</td>");
 				out.print("<td>"+ rs.getString(3) + "</td>");
-				out.print("<td>"+ rs.getString(4) + "</td>");
+				out.print("<td>"+ String.format("%.2f", rs.getFloat(4)) + "</td>");
 				out.print("<td>"+ rank++ + "</td>");
 				out.print("</tr>");
 		}
