@@ -45,7 +45,6 @@
 		document.input_form.reset();
 	}
 </script>
-<h3>판매등록</h3>
 <form action="action/insert_audition_action.jsp" method="post" name="input_form">
 	<table border="1">
 		<tr>
